@@ -15,24 +15,23 @@ document.querySelectorAll("[data-back-top]").forEach(link => {
 const blogList = document.getElementById("blog-list");
 if (blogList) {
   const text = value => typeof value === "string" ? value.trim() : "";
-  const parsePostUrl = (value, absolute = false) => {
+  const parsePostUrl = value => {
     if (!text(value)) return null;
     try {
-      const url = absolute ? new URL(value) : new URL(value, location.href);
+      const url = new URL(value, location.href);
       if (["http:", "https:"].includes(url.protocol)) return url;
-      if (!absolute && location.protocol === "file:" && url.protocol === "file:") return url;
+      if (location.protocol === "file:" && url.protocol === "file:") return url;
     } catch (_) { /* Ignore missing or malformed article links. */ }
     return null;
   };
   const entries = Array.isArray(window.SYLAS_BLOG_POSTS) ? window.SYLAS_BLOG_POSTS : [];
   const posts = entries.flatMap(post => {
     if (!post || post.source !== "wechat" || !text(post.title)) return [];
-    const originalUrl = parsePostUrl(post.sourceUrl, true);
-    const url = parsePostUrl(post.url) || originalUrl;
+    const url = parsePostUrl(post.url);
     if (!url) return [];
     return [{
       title: text(post.title), date: text(post.date), category: text(post.category),
-      excerpt: text(post.excerpt), url, originalUrl
+      excerpt: text(post.excerpt), url
     }];
   }).sort((a, b) => b.date.localeCompare(a.date));
   const search = document.getElementById("blog-search");
@@ -45,11 +44,6 @@ if (blogList) {
     if (text) node.textContent = text;
     return node;
   };
-  const makeOriginalLink = (link, url) => {
-    link.href = url.href;
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
-  };
   const render = () => {
     const query = (search?.value || "").trim().toLocaleLowerCase();
     const matching = posts.filter(post => [post.title, post.category, post.excerpt].join(" ").toLocaleLowerCase().includes(query));
@@ -60,8 +54,6 @@ if (blogList) {
       const heading = createNode("h2");
       const title = createNode("a", "", post.title);
       title.href = post.url.href;
-      const isWechatUrl = post.url.hostname.toLowerCase() === "mp.weixin.qq.com";
-      if (isWechatUrl) makeOriginalLink(title, post.url);
       heading.append(title);
       const meta = createNode("div", "entry-meta");
       if (post.date) {
@@ -73,16 +65,9 @@ if (blogList) {
       const excerpt = createNode("p", "blog-excerpt", post.excerpt);
       const more = createNode("a", "read-more", "继续读 →");
       more.href = post.url.href;
-      if (isWechatUrl) makeOriginalLink(more, post.url);
       more.setAttribute("aria-label", `继续阅读：${post.title}`);
       const links = createNode("div", "entry-links");
       links.append(more);
-      if (post.originalUrl) {
-        const original = createNode("a", "muted-link", "公众号原文 ↗");
-        makeOriginalLink(original, post.originalUrl);
-        original.setAttribute("aria-label", `公众号原文：${post.title}`);
-        links.append(original);
-      }
       article.append(heading, meta, excerpt, links);
       blogList.append(article);
     }
