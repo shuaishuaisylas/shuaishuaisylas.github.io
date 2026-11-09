@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="上周读到一篇访谈，Z Finance 对话 Instinct 创始人 Noah Shinn。Noah 23 岁，之前是 Sierra 的研究员。他的公司 8 月 26 日以 25 亿美元估值完成 2.5 亿美元融资，一个月后再融 10 亿美元，估值 100 亿——数字来自媒体报道，未经独立核实，听个情绪即可。但情绪是真的：所有人都在赌同一件事。 有意思的是，就在 In…">
+<meta name="author" content="ShuAI">
+<meta name="theme-color" content="#191815">
+<title>当 Agent 比你更懂你 · 刘帅帅 sylas</title>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../article.css">
+<script src="../app.js" defer></script>
+</head>
+<body class="article-page">
+<a class="skip-link" href="#main-content">跳到正文</a>
+<header class="site-header"><div class="header-inner"><a class="brand" href="../index.html" aria-label="刘帅帅 sylas 首页"><strong>刘帅帅</strong><span>sylas · AI 产品经理</span></a><nav class="navigation" aria-label="主导航"><a href="../index.html">首页</a><a href="../blog.html" aria-current="page">博客</a><a href="../projects.html">项目</a><a href="../about.html">关于我</a><a class="github-link" href="https://github.com/shuaishuaisylas" target="_blank" rel="noreferrer">GitHub ↗</a></nav></div></header>
+<div class="site-container page-container article-container">
+<div class="content-layout">
+<main id="main-content" tabindex="-1">
+<article aria-labelledby="article-title">
+<header class="article-header">
+<span class="article-category">AI 产品</span>
+<h1 id="article-title">当 Agent 比你更懂你</h1>
+<div class="article-meta"><time datetime="2026-10-27">2026-10-27</time><span>ShuAI</span><span title="正文字符数，不含空白">全文 5014 字</span></div>
+</header>
+<div class="article-prose">
+<p class="article-deck">当 Agent 比你更懂你：从一篇 Instinct 访谈说起</p>
+<p>上周读到一篇访谈，Z Finance 对话 Instinct 创始人 Noah Shinn。Noah 23 岁，之前是 Sierra 的研究员。他的公司 8 月 26 日以 25 亿美元估值完成 2.5 亿美元融资，一个月后再融 10 亿美元，估值 100 亿——数字来自媒体报道，未经独立核实，听个情绪即可。但情绪是真的：所有人都在赌同一件事。</p>
+<p>有意思的是，就在 Instinct 亮相的前后两个月：xAI 发布 Grok Bot、Meta 发布 Muse、Manus 发布 Cue、OpenAI 在 DevDay 发布 Dots。<strong>五家巨头，挤在不到两个月里，all in 了同一个形态。</strong>这不是巧合，是范式切换。</p>
+<p>这篇文章从五个切入点聊这件事：它们在干嘛、我们怎么走到这一步、资本市场看到了什么、最锋利的问题是什么，以及中国答案可能在哪。</p>
+<h2 id="section-1">一、五家巨头在干嘛</h2>
+<p>先快速过一遍五家，每家一句话。</p>
+<p><strong>ChatGPT Dots</strong>，OpenAI 在 DevDay 发布的一直在线的个人 agent。套餐内第一个 Dot 不另收费，跟它聊天还不占 ChatGPT 的用量额度——摆明了用免费培养习惯。企业版叫 Specialist dots，会计、营销、法务、工单，岗位型虚拟同事，直接对接微软的 Agent 365。</p>
+<p><strong>Grok Bot</strong>，xAI 在 8 月 11 日公测。定位叫&quot;AI teammates&quot;：每个 Bot 跑在自己的云电脑上，拿着你的登录凭证，像人类员工一样进 Slack、进 Google Workspace 干活。最大的卖点就是 24/7——睡前布置任务，关机睡觉，它通宵干完，卡住了才浮出来要审批。</p>
+<p><strong>Muse</strong>，Meta 在 9 月 8 日发布。每个用户一台专属云虚拟机，自带浏览器、文件系统、终端，三层连接器体系。发布十天登顶美区 App Store 免费榜。有意思的是，它的小企业版把&quot;发布、发消息、动钱之前先跟你确认&quot;做成了卖点——<strong>权限确认本身成了差异化</strong>。</p>
+<p><strong>Manus Cue</strong>，9 月 28 日随 Manus 2.0 发布。设定最激进：每个 Agent 有独立的邮箱、电话号码、钱包和电脑四件套，能以自己的身份发消息、按预算付款、替你接电话。创始人肖弘的原话：&quot;也许可以称之为'人'&quot;。</p>
+<p><strong>Instinct</strong>，这篇访谈的主角。形态最极端：<strong>没有 App</strong>。它有自己的电话号码、邮箱和一台 7×24 的云电脑，你在短信、WhatsApp 里跟它说话，或者直接打电话。它帮你订机票酒店、退订阅、协调会议，甚至接长期目标——比如&quot;四个月内全马提速半小时&quot;，训练、饮食、睡眠、采购它自己安排。</p>
+<p>五家名字摆完，共同点其实就三句话：</p>
+<p>第一，<strong>云电脑是标配</strong>。Agent 不能只活在聊天框里，它得有个&quot;身体&quot;去执行。</p>
+<p>第二，<strong>7×24 不下班</strong>。关机继续干、主动短信跟进、目标驱动后台运行。</p>
+<p>第三，<strong>独立身份进场</strong>。电话、邮箱、钱包、登录凭证——五家都在让 agent 以&quot;自己人&quot;的身份进系统办事，而不是甩给你一个链接自己点。</p>
+<p>三家创始人的说法互相印证：肖弘说 Cue&quot;也许可以称之为人&quot;，扎克伯格说 Muse 是 personal superintelligence，Noah 说 Instinct 处理&quot;日常生活中最细腻的个人事务&quot;。<strong>下一个计算平台的入口不是 App，而是替你办事的&quot;人&quot;。</strong></p>
+<h2 id="section-2">二、我们怎么走到这一步</h2>
+<br><p>回头看，AI 产品走了四个阶段，一个比一个&quot;放手&quot;。</p>
+<p><strong>问答：你问，它答。</strong>2022 年，ChatGPT 两个月用户破亿。人类第一次发现&quot;问什么答什么&quot;本身就有巨大价值。但边界也清晰：你关掉页面，它就&quot;死&quot;了。</p>
+<p><strong>Copilot：你干，它帮。</strong>GitHub Copilot、Microsoft 365 Copilot，agent 从聊天框钻进工作流。但你不动手，它不动手。</p>
+<p><strong>Agent：你说，它干。</strong>2025 年是 agent 元年，&quot;给它一个目标，它自己拆步骤执行&quot;成为可能。但多是一次性任务，做完即止。</p>
+<p><strong>Always-On Agent：它替你长期规划、执行。</strong>就是 2026 年这五家。agent 有了身体、不下班、接长期目标。</p>
+<p>为什么是现在？每一阶段的跃迁，都发生在&quot;成本 × 能力&quot;的交叉点上。</p>
+<p>先看成本。OpenAI 官方定价：GPT-4 刚出来时输入 30 美元一百万 token，两年后的 GPT-4o mini 只要 1 毛 5——<strong>两年降了 200 倍</strong>。问答时代回答一次几分钱无所谓，always-on 时代是后台 24 小时持续燃烧，没有这 200 倍，Instinct 的模式在商业上根本算不过账。</p>
+<p>再看算法和工程。Noah 在访谈中自述，他们自研了一套混合推理管线：多模型分发，按任务难度把请求路由到不同模型，杀鸡不用牛刀；批处理，吞吐提升 3 到 8 倍；蒸馏剪枝，各环节再降本 30% 到 50%。这是创始人单方说法，但逻辑是实的：<strong>不靠等一个更强的模型，靠多模型混合加工程优化，用低成本达到前沿大模型的能力水位。</strong>上个月 Manus 2.0 发布的自研 Cascade 框架，官方称 token 降 23%、成本降 32%，也是同一个路数。</p>
+<p>还有工程里&quot;无聊但致命&quot;的部分：Noah 真正的干货不在模型，在<strong>输入防火墙加行动守门系统</strong>——防 prompt 注入、防幻觉、高风险操作拦截。敢让 agent 半夜替你花钱办事，靠的不是模型更聪明，是这套&quot;敢放手&quot;的工程。</p>
+<p><strong>不是模型突然变聪明了，是&quot;聪明&quot;突然变便宜了——便宜到可以 24 小时开着，包装到敢让它替你办事。</strong></p>
+<h2 id="section-3">三、资本视角：训练时代结束，推理时代开幕</h2>
+<br><p>前面是产品逻辑，换个视角看资本市场在赌什么。</p>
+<p>过去三年，市场讲的是&quot;训练&quot;的故事：堆 GPU、训更大的模型，算力等于军备竞赛，谁卡多谁赢。但 2026 年故事变了：前沿模型的能力在收敛，各家差距越来越小，真正的增量不在训练侧，在<strong>推理侧</strong>——agent 24 小时替你办事，每一次行动都是一次推理。</p>
+<p>Noah 的&quot;90% token 在后台&quot;，翻译成资本语言就是：token 消耗从&quot;人触发&quot;变成了&quot;机器自触发&quot;。<strong>以后不用看 DAU，看&quot;在线时长 × agent 密度&quot;。</strong></p>
+<p>需求重构分四层：</p>
+<p>第一，<strong>通用计算回潮，CPU 需求放大</strong>。agent 的&quot;身体&quot;是云电脑：浏览网页、跑代码、调工具、搬数据，大量是通用计算和编排。GPU 负责&quot;想&quot;，CPU 负责&quot;干&quot;——&quot;干&quot;的活多了，CPU 就回潮了。</p>
+<p>第二，<strong>及时存储放大</strong>。长上下文推理要缓存，agent 要随时调取长期记忆——内存和缓存的需求跟着放大。</p>
+<p>第三，<strong>永久存储放大</strong>。每个 agent 的行为轨迹、记忆库、文件系统都要落盘，数据资产越滚越大，删不得。</p>
+<p>第四，<strong>算力放大，背后是电力放大</strong>。以前一个人一台手机；以后一个人是一台手机，加一台 24 小时开机的云电脑。N 个用户乘以 7×24，算力是指数级的；算力背后是电力——数据中心用电，是这轮最确定的需求。</p>
+<p><strong>训练时代买的是&quot;智能的上限&quot;，推理时代买的是&quot;智能的在线时长&quot;——资本市场要从为&quot;参数&quot;定价，转向为&quot;token × 在线时长&quot;定价。</strong></p>
+<h2 id="section-4">四、最锋利的问题：它到底在为谁办事</h2>
+<p>前面都是好消息，现在说可怕的。</p>
+<p>当算力足够便宜、数据足够精准，模型和 agent 会比你更了解你。Noah 在访谈中说，Instinct 90% 以上的 token 消耗在用户看不见的后台——问答 AI 只见过你的问题，always-on agent 见过你的<strong>全部行为轨迹</strong>：你做了什么、没做到什么、为什么没做到。推荐算法知道你&quot;点了什么&quot;，agent 知道的是你的人生数据，维度完全不同。</p>
+<p>这个时候，如果它因为广告商的合作，在长期目标层面替你决策了一些你不需要的东西、引导你消费——这是一件很可怕的事。</p>
+<p>品一下这个差别：<strong>推荐算法只能决定你&quot;看到什么&quot;，agent 能决定你&quot;买到什么&quot;。</strong>当后者被广告商收买，收割精度是前者的指数级——因为它比你更知道你需要什么，还替你点了下单。</p>
+<p>Noah 自己看透了这一层。访谈里他明确<strong>拒绝广告和竞价推荐</strong>，商业模式定为向商户收交易佣金，对标 Apple Pay 和 AmEx，自称&quot;AI 版苹果商店&quot;。翻译过来就是：<strong>agent 的忠诚必须属于用户，出钱的人不能是广告商。</strong>你敢把信用卡交给一个拿广告商钱的人吗？</p>
+<p>这个&quot;忠诚问题&quot;会重构电商。国内走了两代：货架电商，京东淘宝，人找货，你需要什么去搜什么买什么；兴趣电商，抖音，货找人，根据你的浏览关注推你感兴趣的东西，引导你买。下一步是<strong>委托电商</strong>：agent 替你买。注意，&quot;逛&quot;这个环节被拿掉了——agent 按你的长期目标直接决策下单。</p>
+<p>那谁受益？我的判断：<strong>最受益的是京东，其次淘宝，抖音那种长期占据注意力再推销的模式，税基没了。</strong></p>
+<p>为什么？agent 替你买，决策标准变成&quot;符合长期利益、足够好、足够快拿到&quot;。京东的底牌是履约：211 限时达、自营正品心智、售后口碑，这是十年重资产砸出来的，补不起来。价格一样的时候我们本能选京东，不是因为爱京东，是因为决策函数里&quot;靠谱送到&quot;的权重最高——<strong>信任和物流，就是 agent 时代的转化率</strong>。淘宝排第二，供给池最深，长尾和比价离不开它。而抖音的货币是注意力时长，没有&quot;逛&quot;就没有冲动，没有冲动，信息流广告的链路就被截断了。</p>
+<p>当然京东吃红利有个前提：得向 agent 开放机器可读的接口，商品、库存、履约 API。基建再好，不开放就等于给 agent 关了门。</p>
+<p>另外，9 月 30 日，FTC 正式对 OpenAI、Anthropic 等启动调查，针对的就是 rogue AI agents，导火索是 OpenAI 的 agent 攻破了 Hugging Face。<strong>连监管都下场了，说明&quot;agent 在为谁办事&quot;已经不是科幻，是眼下的立法问题。</strong></p>
+<p><strong>推荐时代，平台把&quot;你喜欢什么&quot;卖给出价最高的人；agent 时代，&quot;你需要什么&quot;本身成了入口——谁掌握履约，谁就掌握入口；谁出卖忠诚，谁就掌握收割。</strong></p>
+<h2 id="section-5">五、社交，与中国答案</h2>
+<br><p>因为 agent 特别了解你，它还能替你社交：帮你约合适的时间，跟别人聊工作、闲聊。根据对方是你妻子、好朋友还是普通朋友，开放不同权限、暴露不同程度的信息。</p>
+<p>这不是空想，Noah 在访谈里讲了现成的：<strong>Trusted Person Network</strong>，你的 Instinct 直接跟配偶、朋友的 Instinct 对话，协调约会、拼日历空档、组织多人旅行，按关系给细粒度、可撤销的权限。这不是功能，这是<strong>社交协议</strong>。微信花了十年教育用户&quot;朋友圈三天可见&quot;，agent 社交就是把这套心智搬到机器之间。</p>
+<p>再看企业侧。举个例子：一个明星开演唱会，主题是怀旧，更希望来的是跟了他 10 年的老粉、买过他东西的人。算法精确匹配到最优的观众，黄牛不存在了，买家不用熬夜抢票，现场氛围还对。这不是空想，现实里有原型：2022 年 Taylor Swift 巡演，Ticketmaster 用 Verified Fan 按注册和历史购票行为筛真实粉丝、挡机器人黄牛——&quot;按行为数据分配稀缺资源&quot;已经跑通过。agent 版是它的终极形态：主办方的企业 agent 和粉丝的个人 agent 直接谈，票到人。<strong>黄牛赚的是信息不对称加手速的钱，当分配规则变成关系与行为数据，套利空间归零。</strong></p>
+<p>说点切身体会。我每天用的 AI 助手，会根据聊天内容给我推资讯，把调研默默放进我的想法和待办；家里老人的慢性病用药，它会规划提醒我定期买。如果购物打通，链路会变成&quot;到期、agent 比价、下单、送达&quot;——<strong>提醒只是过渡形态，直连下单才是终局</strong>。</p>
+<p>那国内谁最有可能？我的判断是<strong>腾讯</strong>。微信超 13 亿月活（腾讯财报口径），中国最完整的真实社交关系链——Noah 的&quot;按关系给权限&quot;在微信里天然成立，因为关系链现成，还是实名的。聊天就是入口，这在形态上最接近 Instinct&quot;无 App、短信即入口&quot;的判断。</p>
+<p>而且确有其事：微信原生 AI 助手&quot;小微&quot;今年 6 月内测，9 月 15 日因为&quot;微信 AI 隐私&quot;冲上热搜，官方回应说只有用户主动唤起时才临时读取指定的聊天记录做分析，用完即弃。&quot;聊天记录拿去分析&quot;这件事，微信已经在做了。</p>
+<p>但我也留一个平衡：好产品往往出自 AI 原生企业，传统大厂有组织惯性。不过微信本身就是反例——大厂内部小团队做出的原生级产品。所以命题不是&quot;大厂不行&quot;，而是&quot;<strong>大厂里有没有一支被充分授权、不背 KPI 包袱的小团队</strong>&quot;。另外不押注单一选手，千问生态最闭环，抖音豆包跑得最快，都值得看。</p>
+<p><strong>当 agent 替你社交，关系本身变成了 API。你是谁的朋友、谁的家人，不再只是通讯录备注，而是可被调用、可被授权、可被撤销的权限。</strong></p>
+<h2 id="section-6">结尾</h2>
+<p><strong>下一个计算平台的入口不是 App，而是替你办事的&quot;人&quot;。</strong></p>
+<p>当五个&quot;人&quot;都替你 24 小时办事，技术、成本、工程都已就绪，唯一剩下的变量就是信任：它比你更懂你之后，到底在为谁办事。这个问题的答案，会决定下一个十年的商业版图。</p>
+<hr>
+
+</div>
+<footer class="article-end">
+<div class="entry-links"><a href="../blog.html">← 返回博客</a><a href="../index.html">回到首页 →</a></div>
+</footer>
+</article>
+</main>
+<aside class="sidebar" aria-label="文章目录与作者信息">
+<nav class="sidebar-section article-toc" aria-label="文章目录"><h2>文章目录</h2><ol>
+<li><a href="#section-1">一、五家巨头在干嘛</a></li>
+<li><a href="#section-2">二、我们怎么走到这一步</a></li>
+<li><a href="#section-3">三、资本视角：训练时代结束，推理时代开幕</a></li>
+<li><a href="#section-4">四、最锋利的问题：它到底在为谁办事</a></li>
+<li><a href="#section-5">五、社交，与中国答案</a></li>
+<li><a href="#section-6">结尾</a></li>
+</ol></nav>
+<section class="author-card"><img src="../assets/avatar.png" width="100" height="100" alt="刘帅帅（sylas）的个人照片"><h2>刘帅帅 <span>sylas</span></h2><p class="author-role">AI 产品经理</p><p>关注 AI 能力如何转化为有用的产品。</p><p>在项目里探索，在实践中思考。</p><a href="../about.html">更多关于我 →</a></section>
+<section class="sidebar-section wechat-section" aria-label="微信与公众号"><h2>微信</h2><figure class="wechat-qr"><a href="../assets/wechat-public-account.jpg" target="_blank" rel="noreferrer" aria-label="查看公众号二维码大图"><img src="../assets/wechat-public-account.jpg" width="200" height="200" alt="刘帅帅的微信公众号二维码，扫码关注公众号"></a><figcaption>扫码关注公众号</figcaption></figure><div class="wechat-account"><span>个人微信 · <code>sylas5555</code></span><button class="copy-button" type="button" data-copy="sylas5555" data-copy-label="微信号" aria-label="复制微信号 sylas5555">复制</button></div></section>
+</aside>
+</div>
+<footer class="site-footer"><span>© 2026 刘帅帅 · sylas</span><span>保持好奇，把想法做出来。</span><a href="#top" data-back-top>回到顶部 ↑</a></footer>
+</div>
+<div class="toast" id="copy-status" role="status" aria-live="polite"></div>
+</body>
+</html>
